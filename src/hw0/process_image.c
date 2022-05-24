@@ -89,6 +89,18 @@ void shift_image(image im, int c, float v)
     }
 }
 
+void scale_image(image im, int c, float v)
+{
+    for (int y = 0; y < im.h; ++y)
+    {
+        for (int x = 0; x < im.w; ++x)
+        {
+            float value = get_pixel(im, x, y, c);
+            set_pixel(im, x, y, c, value * v);
+        }
+    }    
+}
+
 void clamp_image(image im)
 {
     // TODO Fill this in
